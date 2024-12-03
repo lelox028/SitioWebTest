@@ -41,7 +41,12 @@
   background-color: beige;
   .Main {
     margin: 10em auto;
+    padding: 10px;
     max-width: fit-content;
     background-color: lightblue;
+    text-align: center;
+    .ProfilePic {
+      border-radius: 100px;
+    }
   }
 }

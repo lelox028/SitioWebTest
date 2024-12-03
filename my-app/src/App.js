@@ -21,7 +21,7 @@ function App() {
     // </div>
     <div className="Body">
       <div className="Main">
-        <img src='https://picsum.photos/200' alt='foto perfil' />
+        <img src='https://picsum.photos/200' alt='foto perfil' className="ProfilePic" />
         <h1>Giuliano Pascarelli</h1>
         <p>Aca va mi descripcion</p>
         <h3> Subtitulo xd</h3>
