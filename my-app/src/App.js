@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+import './App.scss';
 
 function App() {
   return (
@@ -19,16 +19,18 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <div>
-      <img src= 'https://picsum.photos/200'/>
-      <h1>Giuliano Pascarelli</h1>
-      <p>Aca va mi descripcion</p>
-      <h3> Subtitulo xd</h3>
-      <p>parrafo explicando algo que deberia explicarse o al menos tener una explicacion</p>
-      <ul>
-        <li>coso1</li>
-        <li>coso2</li>
-      </ul>
+    <div className="Body">
+      <div className="Main">
+        <img src='https://picsum.photos/200' alt='foto perfil' />
+        <h1>Giuliano Pascarelli</h1>
+        <p>Aca va mi descripcion</p>
+        <h3> Subtitulo xd</h3>
+        <p>parrafo explicando algo que deberia explicarse o al menos tener una explicacion</p>
+        <ul>
+          <li>coso1</li>
+          <li>coso2</li>
+        </ul>
+      </div>
     </div>
   );
 }
