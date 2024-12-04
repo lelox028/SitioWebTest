@@ -1,28 +1,11 @@
 //import logo from './logo.svg';
 import './App.scss';
+import ProfilePicUrl from "./dist/ProfilePic.JPG" 
 
 let PersonalDescription = "Aca va mi descripcion"
-let ProfilePicSize = 200
-let ProfilePicUrl = "https://picsum.photos/"+ProfilePicSize
 
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
     <div className="Body">
       <div className="Main">
         <div className="Bio">
