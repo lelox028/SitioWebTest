@@ -39,14 +39,27 @@
 
 .Body {
   background-color: beige;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  position: fixed;
+
   .Main {
     margin: 10em auto;
-    padding: 10px;
+    padding: 40px 20%;
     max-width: fit-content;
     background-color: lightblue;
     text-align: center;
+
     .ProfilePic {
       border-radius: 100px;
+    }
+
+    .UList {
+      max-width: fit-content;
+      text-align: left;
     }
   }
 }

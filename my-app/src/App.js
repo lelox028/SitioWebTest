@@ -21,15 +21,29 @@ function App() {
     // </div>
     <div className="Body">
       <div className="Main">
-        <img src='https://picsum.photos/200' alt='foto perfil' className="ProfilePic" />
-        <h1>Giuliano Pascarelli</h1>
-        <p>Aca va mi descripcion</p>
-        <h3> Subtitulo xd</h3>
-        <p>parrafo explicando algo que deberia explicarse o al menos tener una explicacion</p>
-        <ul>
-          <li>coso1</li>
-          <li>coso2</li>
-        </ul>
+        <div className="Bio">
+          <img src='https://picsum.photos/200' alt='foto perfil' className="ProfilePic" />
+          <h1>Giuliano Pascarelli</h1>
+          <p>Aca va mi descripcion</p>
+        </div>
+        <div className="BioSection">
+          <h3> Subtitulo xd</h3>
+          <p>Cosas que me gustaria que este sitio tenga:</p>
+          <div className="UList">
+            <ul>
+              <li>Topbar</li>
+              <li>Texto que se actualice segun variables de React</li>
+              <li>Listas con checkbox</li>
+              <li>Una Database conectada.</li>
+              <li>Una foto mia (Opcional: salir presentable)</li>
+              <li>Links a mi github, linkedin, etc.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="BioSection">
+          <h3>Listado de variables: </h3>
+          <p>En progreso xdxd</p>
+        </div>
       </div>
     </div>
   );
