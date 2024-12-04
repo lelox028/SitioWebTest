@@ -15,7 +15,9 @@ function App() {
   { name: 'Una Database conectada.', status: false },
   { name: 'Una foto mia (Opcional: salir presentable)', status: true },
   { name: 'Links a mi github, linkedin, etc.', status: false },
-  { name: 'useStates', status: true }
+  { name: 'useStates', status: true },
+  { name: 'Seccion About Me', status: false },
+  { name: 'Seccion Works', status: false }
   ])
 
   //Funcion que permite la actualizacion del status de un solo item de la lista. 
