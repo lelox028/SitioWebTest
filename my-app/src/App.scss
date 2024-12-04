@@ -63,6 +63,9 @@
     .UList {
       max-width: fit-content;
       text-align: left;
+      .CheckBox {
+        display: flex;
+      }
     }
   }
 }
