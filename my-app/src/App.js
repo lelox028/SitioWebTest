@@ -7,6 +7,8 @@ import ProfilePicUrl from "./dist/ProfilePic.JPG"
 
 function App() {
   let PersonalDescription = "Aca va mi descripcion"
+
+  //Creamos un useState que contendra los valores de la lista de objetivos. usamos useState para que los valores mostrados se actualicen cuando estos cambien 
   const [items, setitems] = React.useState([{ name: 'Topbar', status: false },
   { name: 'Texto que se actualice segun variables de React', status: true },
   { name: 'Listas con checkbox', status: true },
@@ -15,7 +17,8 @@ function App() {
   { name: 'Links a mi github, linkedin, etc.', status: false },
   { name: 'useStates', status: true }
   ])
-  
+
+  //Funcion que permite la actualizacion del status de un solo item de la lista. 
   const toggleStatus = (name) => {
     setitems((prevItems) =>
       prevItems.map((item) =>
