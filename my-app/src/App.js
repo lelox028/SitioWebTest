@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import './App.scss';
 import { Checkbox } from '@mui/material';
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import ProfilePicUrl from "./dist/ProfilePic.JPG"
 
 
@@ -29,6 +29,9 @@ function App() {
 
   return (
     <div className="Body">
+    <div className='topbar'>
+      
+    </div>
       <div className="Main">
         <div className="Bio">
           <img src={ProfilePicUrl} alt='foto perfil' className="ProfilePic" />
@@ -44,6 +47,12 @@ function App() {
                 <Checkbox
                   checked={item.status}
                   onClick={(e) => { toggleStatus(item.name) }}
+                  sx={{
+                    color: "#79740e",
+                    '&.Mui-checked': {
+                      color: "#79740e",
+                    },
+                  }}
                 />
                 <p>{item.name}</p>
               </div>
@@ -51,7 +60,11 @@ function App() {
           </div>
         </div>
         <div className="BioSection">
-          <h3>Listado de variables: </h3>
+          <h3>Listado de cosas: </h3>
+          <p>En progreso xdxd</p>
+          <p>En progreso xdxd</p>
+          <p>En progreso xdxd</p>
+          <p>En progreso xdxd</p>
           <p>En progreso xdxd</p>
         </div>
       </div>
