@@ -1,6 +1,10 @@
 //import logo from './logo.svg';
 import './App.scss';
 
+let PersonalDescription = "Aca va mi descripcion"
+let ProfilePicSize = 200
+let ProfilePicUrl = "https://picsum.photos/"+ProfilePicSize
+
 function App() {
   return (
     // <div className="App">
@@ -22,9 +26,9 @@ function App() {
     <div className="Body">
       <div className="Main">
         <div className="Bio">
-          <img src='https://picsum.photos/200' alt='foto perfil' className="ProfilePic" />
+          <img src={ProfilePicUrl} alt='foto perfil' className="ProfilePic" />
           <h1>Giuliano Pascarelli</h1>
-          <p>Aca va mi descripcion</p>
+          <p>{PersonalDescription}</p>
         </div>
         <div className="BioSection">
           <h3> Subtitulo xd</h3>
