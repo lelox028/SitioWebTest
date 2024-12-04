@@ -29,9 +29,15 @@ function App() {
 
   return (
     <div className="Body">
-    <div className='topbar'>
-      
-    </div>
+      <div className='topbar'>
+        <div className='left'>
+          <p>Giuliano Pascarelli</p>
+        </div>
+        <div className='right'>
+          <p>Works</p>
+          <p>About</p>
+        </div>
+      </div>
       <div className="Main">
         <div className="Bio">
           <img src={ProfilePicUrl} alt='foto perfil' className="ProfilePic" />
