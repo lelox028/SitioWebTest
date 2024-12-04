@@ -1,10 +1,11 @@
 //import logo from './logo.svg';
 import './App.scss';
+import { Checkbox } from '@mui/material';
 import ProfilePicUrl from "./dist/ProfilePic.JPG" 
 
-let PersonalDescription = "Aca va mi descripcion"
 
 function App() {
+  let PersonalDescription = "Aca va mi descripcion"
   return (
     <div className="Body">
       <div className="Main">
