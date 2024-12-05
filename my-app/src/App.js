@@ -9,7 +9,7 @@ function App() {
   let PersonalDescription = "Aca va mi descripcion"
 
   //Creamos un useState que contendra los valores de la lista de objetivos. usamos useState para que los valores mostrados se actualicen cuando estos cambien 
-  const [items, setitems] = React.useState([{ name: 'Topbar', status: false },
+  /* const [items, setitems] = React.useState([{ name: 'Topbar', status: false },
   { name: 'Texto que se actualice segun variables de React', status: true },
   { name: 'Listas con checkbox', status: true },
   { name: 'Una Database conectada.', status: false },
@@ -18,11 +18,21 @@ function App() {
   { name: 'useStates', status: true },
   { name: 'Seccion About Me', status: false },
   { name: 'Seccion Works', status: false }
-  ])
+  ]) */
+
+
+  const [items, setItems] = React.useState([]);
+
+  React.useEffect(() => {
+        fetch('http://localhost:8080/items')
+            .then(response => response.json())
+            .then(data => {console.log("aaaa",data); setItems(data)})
+            .catch(error => console.error('Error fetching items:', error));
+    }, []);
 
   //Funcion que permite la actualizacion del status de un solo item de la lista. 
   const toggleStatus = (name) => {
-    setitems((prevItems) =>
+    setItems((prevItems) =>
       prevItems.map((item) =>
         item.name === name ? { ...item, status: !item.status } : item
       )
@@ -53,7 +63,7 @@ function App() {
             {items.map((item) => (
               <div className='CheckBox'>
                 <Checkbox
-                  checked={item.status}
+                  checked={item.status_Items}
                   onClick={(e) => { toggleStatus(item.name) }}
                   sx={{
                     color: "#79740e",
@@ -62,7 +72,7 @@ function App() {
                     },
                   }}
                 />
-                <p>{item.name}</p>
+                <p>{item.name_Items}</p>
               </div>
             ))}
           </div>
