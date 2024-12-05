@@ -8,19 +8,6 @@ import ProfilePicUrl from "./dist/ProfilePic.JPG"
 function App() {
   let PersonalDescription = "Aca va mi descripcion"
 
-  //Creamos un useState que contendra los valores de la lista de objetivos. usamos useState para que los valores mostrados se actualicen cuando estos cambien 
-  /* const [items, setitems] = React.useState([{ name: 'Topbar', status: false },
-  { name: 'Texto que se actualice segun variables de React', status: true },
-  { name: 'Listas con checkbox', status: true },
-  { name: 'Una Database conectada.', status: false },
-  { name: 'Una foto mia (Opcional: salir presentable)', status: true },
-  { name: 'Links a mi github, linkedin, etc.', status: false },
-  { name: 'useStates', status: true },
-  { name: 'Seccion About Me', status: false },
-  { name: 'Seccion Works', status: false }
-  ]) */
-
-
   const [items, setItems] = React.useState([]);
 
   React.useEffect(() => {
@@ -34,10 +21,12 @@ function App() {
   const toggleStatus = (name) => {
     setItems((prevItems) =>
       prevItems.map((item) =>
-        item.name === name ? { ...item, status: !item.status } : item
+        item.name_Items === name ? { ...item, status_Items: !item.status_Items } : item
       )
     );
   };
+
+  React.useEffect(()=>{console.log('items changed',items)},[items]);
 
   return (
     <div className="Body">
@@ -64,7 +53,7 @@ function App() {
               <div className='CheckBox'>
                 <Checkbox
                   checked={item.status_Items}
-                  onClick={(e) => { toggleStatus(item.name) }}
+                  onClick={(e) => { toggleStatus(item.name_Items) }}
                   sx={{
                     color: "#79740e",
                     '&.Mui-checked': {
