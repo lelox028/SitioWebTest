@@ -2,6 +2,8 @@
 import './App.scss';
 import { Checkbox } from '@mui/material';
 import React from 'react'
+import axios from 'axios';
+
 import ProfilePicUrl from "./dist/ProfilePic.JPG"
 
 
@@ -11,11 +13,15 @@ function App() {
   const [items, setItems] = React.useState([]);
 
   React.useEffect(() => {
-        fetch('http://localhost:8080/items')
-            .then(response => response.json())
-            .then(data => {console.log("aaaa",data); setItems(data)})
-            .catch(error => console.error('Error fetching items:', error));
-    }, []);
+    axios.get('http://localhost:8080/items')
+        .then(response => {
+            console.log("Datos recibidos: ", response.data); // Axios ya tiene los datos en 'response.data'
+            setItems(response.data);
+        })
+        .catch(error => {
+            console.error('Error al obtener los items:', error);
+        });
+}, []);
 
   //Funcion que permite la actualizacion del status de un solo item de la lista. 
   const toggleStatus = (name) => {
