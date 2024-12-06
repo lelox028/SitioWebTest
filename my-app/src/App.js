@@ -9,7 +9,7 @@ import ProfilePicUrl from "./dist/ProfilePic.JPG"
 
 
 function App() {
-  let PersonalDescription = "Aca va mi descripcion"
+  let PersonalDescription = "Desarrollador Fullstack & Nerd profesional"
 
   const [items, setItems] = React.useState([]);
 
@@ -67,14 +67,14 @@ function App() {
             <p>{PersonalDescription}</p>
           </div>
           <div className="BioSection">
-            <h3> Subtitulo xd</h3>
-            <p>Cosas que me gustaria que este sitio tenga:</p>
+            <h3> To Do:</h3>
             <div className="list">
               {items.map((item) => (
                 <div className='CheckBox'>
                   <Checkbox
                     checked={item.status_Items}
                     onClick={(e) => { toggleStatus(item) }}
+                    size='small'
                     sx={{
                       color: "#79740e",
                       '&.Mui-checked': {
