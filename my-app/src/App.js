@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import './App.scss';
 import { Checkbox } from '@mui/material';
+import { Container } from '@mui/material';
 import React from 'react'
 import axios from 'axios';
 
@@ -31,7 +32,7 @@ function App() {
       )
     );
     // ToDo: Seguramente haya una mejor manera de resolver esto en un unico paso.
-    item = {...item, status_Items: !item.status_Items}
+    item = { ...item, status_Items: !item.status_Items }
     updateItem(item);
   };
 
@@ -58,42 +59,44 @@ function App() {
           <p>About</p>
         </div>
       </div>
-      <div className="Main">
-        <div className="Bio">
-          <img src={ProfilePicUrl} alt='foto perfil' className="ProfilePic" />
-          <h1>Giuliano Pascarelli</h1>
-          <p>{PersonalDescription}</p>
-        </div>
-        <div className="BioSection">
-          <h3> Subtitulo xd</h3>
-          <p>Cosas que me gustaria que este sitio tenga:</p>
-          <div className="UList">
-            {items.map((item) => (
-              <div className='CheckBox'>
-                <Checkbox
-                  checked={item.status_Items}
-                  onClick={(e) => { toggleStatus(item) }}
-                  sx={{
-                    color: "#79740e",
-                    '&.Mui-checked': {
+      <Container maxWidth='lg' className='mainContainer'>
+        <div className="main">
+          <div className="Bio">
+            <img src={ProfilePicUrl} alt='foto perfil' className="ProfilePic" />
+            <h1>Giuliano Pascarelli</h1>
+            <p>{PersonalDescription}</p>
+          </div>
+          <div className="BioSection">
+            <h3> Subtitulo xd</h3>
+            <p>Cosas que me gustaria que este sitio tenga:</p>
+            <div className="list">
+              {items.map((item) => (
+                <div className='CheckBox'>
+                  <Checkbox
+                    checked={item.status_Items}
+                    onClick={(e) => { toggleStatus(item) }}
+                    sx={{
                       color: "#79740e",
-                    },
-                  }}
-                />
-                <p>{item.name_Items}</p>
-              </div>
-            ))}
+                      '&.Mui-checked': {
+                        color: "#79740e",
+                      },
+                    }}
+                  />
+                  <p>{item.name_Items}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="BioSection">
+            <h3>Listado de cosas: </h3>
+            <p>En progreso xdxd</p>
+            <p>En progreso xdxd</p>
+            <p>En progreso xdxd</p>
+            <p>En progreso xdxd</p>
+            <p>En progreso xdxd</p>
           </div>
         </div>
-        <div className="BioSection">
-          <h3>Listado de cosas: </h3>
-          <p>En progreso xdxd</p>
-          <p>En progreso xdxd</p>
-          <p>En progreso xdxd</p>
-          <p>En progreso xdxd</p>
-          <p>En progreso xdxd</p>
-        </div>
-      </div>
+      </Container>
     </div>
   );
 }
