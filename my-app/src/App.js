@@ -14,25 +14,38 @@ function App() {
 
   React.useEffect(() => {
     axios.get('http://localhost:8080/items')
-        .then(response => {
-            console.log("Datos recibidos: ", response.data); // Axios ya tiene los datos en 'response.data'
-            setItems(response.data);
-        })
-        .catch(error => {
-            console.error('Error al obtener los items:', error);
-        });
-}, []);
+      .then(response => {
+        console.log("Datos recibidos: ", response.data); // Axios ya tiene los datos en 'response.data'
+        setItems(response.data);
+      })
+      .catch(error => {
+        console.error('Error al obtener los items:', error);
+      });
+  }, []);
 
   //Funcion que permite la actualizacion del status de un solo item de la lista. 
-  const toggleStatus = (name) => {
+  const toggleStatus = (item) => {
     setItems((prevItems) =>
-      prevItems.map((item) =>
-        item.name_Items === name ? { ...item, status_Items: !item.status_Items } : item
+      prevItems.map((newItem) =>
+        newItem.id_Items === item.id_Items ? { ...newItem, status_Items: !newItem.status_Items } : newItem
       )
     );
+    // ToDo: Seguramente haya una mejor manera de resolver esto en un unico paso.
+    item = {...item, status_Items: !item.status_Items}
+    updateItem(item);
   };
 
-  React.useEffect(()=>{console.log('items changed',items)},[items]);
+  const updateItem = (item) => {
+    axios.put('http://localhost:8080/item/' + item.id_Items, item)
+      .then(response => {
+        console.log("item modificado: ", response.data);
+      })
+      .catch(error => {
+        console.log('Error al actualizar el item ' + item.id_Items, error);
+      });
+  }
+
+  React.useEffect(() => { console.log('items changed', items) }, [items]);
 
   return (
     <div className="Body">
@@ -59,7 +72,7 @@ function App() {
               <div className='CheckBox'>
                 <Checkbox
                   checked={item.status_Items}
-                  onClick={(e) => { toggleStatus(item.name_Items) }}
+                  onClick={(e) => { toggleStatus(item) }}
                   sx={{
                     color: "#79740e",
                     '&.Mui-checked': {
