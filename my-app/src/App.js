@@ -51,13 +51,18 @@ function App() {
   return (
     <div className="Body">
       <div className='topbar'>
-        <div className='left'>
-          <p>Giuliano Pascarelli</p>
-        </div>
-        <div className='right'>
-          <p>Works</p>
-          <p>About</p>
-        </div>
+        <Container
+          className='topbarContainer'
+          maxWidth='lg'
+        >
+          <div className='left'>
+            <p>Giuliano Pascarelli</p>
+          </div>
+          <div className='right'>
+            <p>Works</p>
+            <p>About</p>
+          </div>
+        </Container>
       </div>
       <Container maxWidth='lg' className='mainContainer'>
         <div className="main">
